@@ -1,0 +1,9 @@
+streamlit>=1.20
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+joblib
+requests
+streamlit-lottie

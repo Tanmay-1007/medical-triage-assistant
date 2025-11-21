@@ -1,0 +1,17 @@
+{
+  "label2idx": {
+    "Emergency": 0,
+    "Urgent": 1,
+    "Routine": 2,
+    "Self-care": 3
+  },
+  "idx2label": {
+    "0": "Emergency",
+    "1": "Urgent",
+    "2": "Routine",
+    "3": "Self-care"
+  },
+  "trained_on": "2025-11-20T13:51:33.930884",
+  "n_train": 402,
+  "n_test": 101
+}

@@ -1,0 +1,50 @@
+{
+  "mlb_sym_classes": [
+    "Abdominal pain",
+    "Chest pain",
+    "Cough",
+    "Diarrhea",
+    "Dizziness",
+    "Fatigue",
+    "Fever",
+    "Headache",
+    "Loss of smell/taste",
+    "Rash",
+    "Severe bleeding",
+    "Shortness of breath",
+    "Sore throat",
+    "Unconscious",
+    "Vomiting"
+  ],
+  "mlb_rf_classes": [
+    "Fainting",
+    "Severe bleeding",
+    "Severe chest pain",
+    "Slurred speech",
+    "Unconscious"
+  ],
+  "feature_columns": [
+    "sym_Abdominal pain",
+    "sym_Chest pain",
+    "sym_Cough",
+    "sym_Diarrhea",
+    "sym_Dizziness",
+    "sym_Fatigue",
+    "sym_Fever",
+    "sym_Headache",
+    "sym_Loss of smell/taste",
+    "sym_Rash",
+    "sym_Severe bleeding",
+    "sym_Shortness of breath",
+    "sym_Sore throat",
+    "sym_Unconscious",
+    "sym_Vomiting",
+    "rf_Fainting",
+    "rf_Severe bleeding",
+    "rf_Severe chest pain",
+    "rf_Slurred speech",
+    "rf_Unconscious",
+    "age",
+    "duration_days"
+  ]
+}

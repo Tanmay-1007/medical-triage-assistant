@@ -1,0 +1,501 @@
+age,symptoms,red_flags,duration_days
+67,Sore throat,,1
+29,Fever,,1
+72,Abdominal pain,,1
+83,Rash;Severe bleeding,,2
+14,Fatigue;Loss of smell/taste,Unconscious,2
+75,Fever;Chest pain,,2
+17,Unconscious,,3
+41,Abdominal pain;Diarrhea;Fatigue,,10
+24,Unconscious;Fatigue;Severe bleeding,,3
+2,Cough;Loss of smell/taste;Severe bleeding,,3
+78,Cough,,2
+74,Headache,,4
+79,Chest pain,,3
+51,Cough,,1
+38,Fatigue;Fever;Vomiting,,4
+28,Abdominal pain,,1
+20,Vomiting,,1
+24,Loss of smell/taste;Vomiting,,1
+64,Diarrhea;Severe bleeding,,1
+60,Loss of smell/taste,,3
+38,Dizziness;Cough;Severe bleeding,,3
+37,Unconscious;Severe bleeding,,2
+42,Dizziness,,2
+80,Abdominal pain;Fatigue;Unconscious;Loss of smell/taste,,2
+82,Headache;Abdominal pain,,3
+82,Fever,,2
+11,Loss of smell/taste;Headache,,1
+31,Diarrhea;Fever,,2
+88,Shortness of breath;Abdominal pain;Diarrhea,,1
+67,Unconscious;Dizziness,,10
+22,Diarrhea,,1
+48,Sore throat,,4
+85,Vomiting,,2
+20,Sore throat,,1
+52,Rash,,1
+81,Abdominal pain;Sore throat;Diarrhea,,1
+48,Unconscious;Dizziness,,3
+73,Severe bleeding,,1
+37,Shortness of breath;Headache,,7
+22,Vomiting;Dizziness;Diarrhea,,1
+77,Dizziness;Fever;Severe bleeding,,3
+60,Dizziness;Rash,,4
+84,Abdominal pain;Loss of smell/taste;Rash,,1
+26,Abdominal pain;Sore throat;Fever,,2
+50,Cough;Severe bleeding;Unconscious,,2
+46,Fatigue;Vomiting,Unconscious,7
+24,Severe bleeding,,1
+29,Unconscious,,4
+88,Fatigue;Sore throat;Loss of smell/taste,,7
+68,Unconscious;Abdominal pain,,4
+69,Sore throat;Rash,,2
+39,Fatigue,,1
+58,Vomiting;Chest pain,,4
+46,Headache,,2
+37,Diarrhea,,1
+59,Diarrhea;Headache;Fatigue,,2
+17,Severe bleeding;Abdominal pain;Diarrhea,,3
+86,Headache,,3
+46,Unconscious;Rash,,1
+14,Abdominal pain,,4
+2,Rash;Loss of smell/taste;Fatigue,,3
+9,Rash;Sore throat;Fatigue,,10
+14,Diarrhea,,3
+34,Sore throat,,2
+32,Diarrhea,,1
+23,Chest pain;Fatigue,,1
+8,Cough,,1
+72,Chest pain,,1
+38,Sore throat;Diarrhea;Cough,,4
+25,Loss of smell/taste,,3
+42,Rash,,1
+74,Severe bleeding;Fatigue;Headache,,4
+21,Shortness of breath,,2
+60,Dizziness;Abdominal pain,,7
+36,Chest pain;Severe bleeding;Vomiting;Shortness of breath,,1
+19,Chest pain;Abdominal pain;Diarrhea,,2
+55,Unconscious;Loss of smell/taste;Fatigue,,1
+72,Fever,,1
+33,Abdominal pain;Chest pain,,4
+70,Severe bleeding,,7
+61,Shortness of breath;Fatigue,,1
+67,Sore throat,Fainting,1
+51,Shortness of breath,,1
+51,Headache,,2
+33,Sore throat;Rash;Unconscious,,3
+14,Cough,,3
+60,Fatigue;Headache;Diarrhea;Chest pain,,1
+13,Cough;Chest pain;Sore throat,,4
+85,Headache,,3
+5,Dizziness,,10
+4,Headache,,3
+26,Sore throat,,7
+85,Cough;Vomiting;Shortness of breath,,4
+3,Severe bleeding,,3
+68,Unconscious,,1
+51,Dizziness,,2
+79,Rash,,3
+49,Sore throat;Fatigue,,1
+9,Headache,,2
+82,Fever,,3
+20,Loss of smell/taste,,2
+32,Loss of smell/taste;Fatigue,Fainting,1
+25,Fever;Sore throat;Headache;Dizziness,,4
+10,Cough;Chest pain,,3
+54,Dizziness,,1
+7,Fatigue;Headache;Sore throat,,1
+28,Diarrhea;Abdominal pain,,4
+5,Sore throat;Cough,,3
+79,Shortness of breath,,4
+24,Headache;Loss of smell/taste;Chest pain,,2
+64,Vomiting,,4
+78,Rash,,3
+15,Cough,Severe bleeding,4
+19,Dizziness;Fever;Abdominal pain,,2
+58,Sore throat,,3
+46,Chest pain,,2
+18,Fever;Sore throat,,1
+1,Cough,,4
+76,Abdominal pain;Diarrhea,Fainting,3
+1,Sore throat,,4
+51,Fatigue;Unconscious,,1
+32,Chest pain;Severe bleeding;Fever,,2
+38,Sore throat,,2
+52,Diarrhea;Rash,,4
+84,Diarrhea,,1
+9,Fever,Severe bleeding,4
+60,Chest pain,,1
+54,Headache;Shortness of breath;Dizziness,,1
+73,Chest pain,,2
+3,Fever;Abdominal pain,,4
+31,Severe bleeding,,2
+12,Diarrhea;Fever,,1
+76,Abdominal pain,,1
+57,Dizziness;Sore throat;Shortness of breath;Chest pain,,3
+86,Shortness of breath;Diarrhea;Rash;Dizziness,,2
+76,Sore throat;Fever,,1
+88,Diarrhea;Chest pain,,4
+63,Fever;Cough;Diarrhea,,2
+21,Dizziness,,1
+41,Cough,,2
+13,Rash;Unconscious;Fever,,3
+17,Fatigue,,2
+35,Fatigue,,1
+62,Fever,,3
+29,Dizziness,,1
+76,Fatigue;Rash;Shortness of breath,,1
+48,Unconscious;Chest pain,,3
+37,Shortness of breath,,1
+34,Unconscious,,4
+46,Chest pain,,4
+65,Severe bleeding;Unconscious;Fatigue,,2
+52,Fever,,4
+85,Rash,,7
+35,Cough;Vomiting;Abdominal pain,,1
+39,Diarrhea;Cough,,1
+42,Fatigue,,1
+79,Dizziness,,3
+39,Diarrhea,,3
+83,Vomiting;Cough,,3
+19,Vomiting;Rash;Loss of smell/taste,,10
+10,Shortness of breath,,1
+27,Unconscious,,4
+28,Dizziness,,4
+15,Cough,,1
+10,Chest pain,,1
+73,Abdominal pain,,2
+81,Headache,,3
+56,Vomiting;Diarrhea,,3
+75,Unconscious;Abdominal pain,,1
+88,Chest pain,,4
+6,Fever;Chest pain;Shortness of breath,,3
+72,Rash;Cough,,4
+62,Headache;Dizziness,Slurred speech,2
+30,Abdominal pain;Headache,,2
+32,Headache;Vomiting,,1
+62,Cough;Rash,,2
+62,Loss of smell/taste,,7
+20,Fatigue,,1
+8,Fever,,2
+13,Shortness of breath,,2
+32,Rash,,1
+76,Sore throat;Headache,,1
+11,Fever;Unconscious,,10
+89,Fatigue;Loss of smell/taste;Shortness of breath,,3
+34,Shortness of breath,,2
+30,Vomiting;Loss of smell/taste,,4
+55,Dizziness;Unconscious,,3
+35,Loss of smell/taste;Headache,,4
+6,Rash,,4
+43,Vomiting;Headache,,2
+63,Chest pain;Rash;Cough,Fainting,1
+8,Shortness of breath,,10
+4,Shortness of breath,,2
+24,Abdominal pain,Severe chest pain,3
+61,Rash;Diarrhea,,4
+47,Vomiting,,2
+18,Fatigue;Unconscious;Vomiting,,1
+61,Sore throat,,2
+30,Shortness of breath;Sore throat,,2
+84,Severe bleeding,,2
+84,Diarrhea,,7
+72,Loss of smell/taste,,2
+67,Cough,,4
+23,Unconscious;Severe bleeding;Chest pain,,7
+12,Cough,,7
+55,Unconscious;Severe bleeding,,3
+53,Loss of smell/taste;Chest pain,,10
+48,Fever;Abdominal pain,,2
+68,Shortness of breath;Dizziness,,4
+72,Dizziness;Vomiting,,4
+79,Rash;Fatigue,,3
+71,Dizziness,,7
+22,Loss of smell/taste,,2
+7,Diarrhea,,2
+47,Severe bleeding;Shortness of breath;Cough,,3
+24,Diarrhea;Severe bleeding;Headache,,2
+70,Fever,,1
+76,Dizziness;Fatigue,,1
+68,Cough,,1
+8,Fatigue;Sore throat,,2
+46,Severe bleeding;Fatigue,Fainting,4
+25,Diarrhea,,2
+88,Rash,,1
+11,Headache,,1
+15,Fatigue,,4
+48,Sore throat,,4
+43,Fatigue;Dizziness;Diarrhea,,1
+55,Fever;Headache,,3
+67,Cough,,1
+28,Sore throat,,3
+11,Cough;Shortness of breath,,1
+34,Sore throat;Severe bleeding;Fatigue,,3
+59,Shortness of breath;Rash,,3
+1,Unconscious;Shortness of breath,,4
+23,Loss of smell/taste;Fever;Diarrhea,,1
+57,Diarrhea,,2
+26,Shortness of breath;Chest pain;Fatigue;Diarrhea,,4
+4,Sore throat;Shortness of breath,,2
+66,Severe bleeding,,3
+84,Fever,,4
+70,Shortness of breath;Vomiting;Fatigue,,4
+48,Fatigue;Vomiting;Severe bleeding,,1
+9,Cough;Rash;Chest pain;Dizziness,,7
+18,Abdominal pain;Cough,,4
+82,Chest pain,,4
+40,Dizziness;Chest pain;Diarrhea;Vomiting,,10
+5,Fatigue;Shortness of breath;Dizziness,,3
+52,Headache,,7
+21,Unconscious,,1
+23,Severe bleeding,,10
+25,Unconscious,,3
+90,Abdominal pain,,2
+4,Sore throat,,2
+50,Loss of smell/taste;Dizziness,,1
+10,Diarrhea,,10
+32,Cough;Headache,,2
+47,Diarrhea;Headache,,2
+9,Unconscious,,2
+4,Severe bleeding;Dizziness,,1
+57,Abdominal pain,,1
+35,Vomiting;Headache;Abdominal pain,,2
+48,Shortness of breath;Cough,,2
+68,Dizziness,,7
+70,Fever,,2
+30,Chest pain;Vomiting,,3
+10,Shortness of breath,,3
+42,Abdominal pain;Dizziness;Sore throat,,7
+6,Fatigue,,1
+45,Dizziness,,4
+22,Fatigue;Unconscious,,3
+87,Loss of smell/taste;Rash,,2
+50,Rash;Severe bleeding;Cough,,3
+19,Shortness of breath;Abdominal pain;Severe bleeding,,3
+75,Chest pain;Fatigue,,2
+46,Severe bleeding;Loss of smell/taste;Dizziness;Headache,,1
+34,Dizziness;Chest pain,,2
+33,Unconscious;Fever;Abdominal pain,,3
+39,Rash,,3
+84,Vomiting,,3
+52,Cough,,1
+81,Fatigue;Sore throat,,7
+52,Sore throat,,4
+12,Shortness of breath,,1
+38,Shortness of breath;Vomiting,,2
+60,Dizziness;Severe bleeding;Cough,,1
+71,Fever;Cough,,2
+76,Fever;Sore throat;Vomiting,,1
+14,Vomiting;Shortness of breath;Headache,,1
+64,Abdominal pain;Unconscious;Loss of smell/taste,,1
+70,Fever;Shortness of breath;Abdominal pain,,2
+50,Headache,,3
+65,Vomiting;Diarrhea,Severe chest pain,3
+88,Severe bleeding,,1
+50,Chest pain,,4
+42,Chest pain,,2
+43,Fatigue;Abdominal pain;Loss of smell/taste,,3
+85,Sore throat,,4
+53,Headache;Vomiting,,2
+60,Dizziness,,4
+14,Fatigue;Sore throat;Rash;Fever,,1
+55,Abdominal pain;Chest pain,,1
+22,Diarrhea,,2
+75,Chest pain,,3
+15,Dizziness;Fatigue,,2
+54,Fatigue,,7
+42,Rash;Cough,,1
+11,Chest pain;Abdominal pain;Headache,,1
+15,Diarrhea,,1
+74,Vomiting;Shortness of breath,,2
+38,Rash,,2
+1,Abdominal pain,Severe bleeding,3
+81,Fever,,4
+60,Abdominal pain;Shortness of breath;Dizziness,,3
+33,Severe bleeding,,1
+36,Fatigue;Dizziness,Unconscious,1
+49,Severe bleeding,,2
+80,Rash;Diarrhea;Chest pain,,2
+19,Abdominal pain,,10
+44,Severe bleeding,,3
+6,Abdominal pain,,1
+21,Vomiting,,4
+47,Shortness of breath,,1
+48,Vomiting;Cough,,1
+67,Fever,,1
+23,Severe bleeding;Diarrhea,,3
+26,Cough,,1
+58,Sore throat,,1
+21,Chest pain,,1
+87,Abdominal pain;Fatigue;Fever,,1
+82,Rash;Diarrhea;Severe bleeding;Shortness of breath,,4
+76,Fever;Severe bleeding;Headache,Slurred speech,3
+69,Rash,,1
+66,Cough,,4
+57,Loss of smell/taste;Rash,,4
+37,Fatigue,,2
+80,Loss of smell/taste;Dizziness;Abdominal pain,,1
+53,Sore throat,,3
+30,Unconscious,,3
+61,Fatigue,,3
+7,Fatigue,,4
+75,Shortness of breath,,1
+30,Dizziness;Shortness of breath,,1
+39,Vomiting;Dizziness;Headache,,7
+17,Diarrhea;Shortness of breath,,3
+27,Severe bleeding,,2
+48,Vomiting,,1
+36,Headache,,2
+68,Dizziness,Unconscious,3
+83,Sore throat;Diarrhea,,1
+35,Fatigue;Dizziness;Chest pain,,2
+58,Fatigue;Unconscious,,1
+34,Loss of smell/taste;Rash,,3
+82,Cough;Fever,,3
+78,Loss of smell/taste,,2
+5,Dizziness,,1
+15,Loss of smell/taste;Vomiting,,3
+11,Loss of smell/taste;Sore throat;Unconscious,,1
+8,Vomiting,,3
+61,Chest pain;Cough,,3
+25,Dizziness;Severe bleeding,,3
+16,Unconscious,,1
+41,Sore throat;Unconscious;Cough,,1
+50,Severe bleeding;Headache,,4
+19,Abdominal pain;Fatigue,,1
+3,Dizziness,,3
+84,Loss of smell/taste,,4
+76,Vomiting,,3
+80,Severe bleeding;Rash,,7
+15,Dizziness;Rash,,7
+3,Severe bleeding;Shortness of breath;Sore throat,,1
+29,Fever,,1
+4,Rash;Chest pain,,3
+78,Sore throat,,3
+12,Severe bleeding,,3
+39,Dizziness,,1
+89,Cough,,1
+7,Rash;Fatigue;Sore throat,,7
+19,Severe bleeding;Abdominal pain;Vomiting,,1
+19,Dizziness,,1
+24,Cough,,1
+28,Abdominal pain;Cough,,1
+72,Rash;Diarrhea;Abdominal pain,,3
+5,Diarrhea,,2
+46,Dizziness;Abdominal pain;Diarrhea,,3
+63,Unconscious,,1
+70,Fever;Vomiting,,4
+10,Cough,,4
+49,Fatigue;Loss of smell/taste,,1
+51,Vomiting;Cough,,7
+19,Headache,,1
+54,Cough,,3
+11,Chest pain;Fever;Cough,,2
+17,Sore throat;Diarrhea,,7
+58,Loss of smell/taste;Severe bleeding;Cough,,3
+80,Vomiting;Sore throat;Fatigue,,4
+18,Vomiting;Diarrhea,,4
+62,Rash;Fever,,2
+52,Rash;Headache;Fever;Vomiting,,4
+59,Cough,,10
+15,Rash;Shortness of breath,,3
+82,Unconscious,,2
+9,Fatigue,,2
+54,Rash;Severe bleeding;Shortness of breath,,3
+1,Abdominal pain,,1
+77,Chest pain,,3
+9,Fatigue;Vomiting,,1
+16,Fever,,2
+70,Abdominal pain,,4
+27,Fatigue;Unconscious,,2
+78,Loss of smell/taste,,1
+23,Cough,,4
+81,Chest pain,,4
+85,Diarrhea,,1
+55,Dizziness;Diarrhea;Cough,,1
+27,Fatigue;Fever;Diarrhea,,2
+17,Cough;Diarrhea,,3
+20,Fever;Severe bleeding,,1
+17,Cough;Chest pain,,2
+49,Diarrhea;Rash;Dizziness,,2
+64,Dizziness,,2
+7,Headache,,4
+25,Shortness of breath;Cough,,3
+28,Fever,,2
+19,Rash,,4
+78,Sore throat,,1
+8,Vomiting,Unconscious,3
+65,Abdominal pain;Dizziness,,10
+70,Sore throat;Loss of smell/taste,,1
+30,Shortness of breath;Vomiting;Dizziness;Rash,,1
+31,Rash,,1
+7,Loss of smell/taste;Cough,,3
+73,Sore throat,,1
+88,Shortness of breath;Chest pain,,2
+43,Loss of smell/taste,,7
+20,Vomiting,,3
+39,Rash;Fatigue,,3
+45,Sore throat;Headache;Chest pain,,2
+21,Shortness of breath;Headache,,2
+84,Loss of smell/taste;Chest pain,,2
+60,Rash,,3
+19,Headache;Fever,,1
+90,Cough;Fatigue,,4
+24,Shortness of breath;Sore throat;Abdominal pain;Cough,,2
+49,Fever,,2
+55,Fever,,2
+37,Vomiting,,1
+78,Fatigue;Fever;Unconscious,,4
+62,Vomiting,,4
+43,Headache;Severe bleeding;Dizziness,,7
+3,Shortness of breath;Dizziness;Abdominal pain,,4
+34,Chest pain,,2
+11,Rash,,4
+47,Dizziness;Abdominal pain,,1
+31,Shortness of breath;Dizziness;Vomiting,,1
+13,Chest pain;Abdominal pain,,1
+60,Severe bleeding,,2
+80,Rash;Abdominal pain;Fatigue,,1
+30,Chest pain,,4
+57,Sore throat,,3
+64,Chest pain,,2
+64,Fatigue;Dizziness,,1
+57,Vomiting;Dizziness,,3
+62,Chest pain,,2
+9,Chest pain;Sore throat;Loss of smell/taste,,1
+81,Shortness of breath,,2
+37,Shortness of breath;Loss of smell/taste;Vomiting,,3
+46,Abdominal pain;Sore throat,,10
+23,Headache,,1
+89,Vomiting,,2
+29,Shortness of breath;Diarrhea,Severe bleeding,1
+48,Severe bleeding;Sore throat,,10
+86,Diarrhea,,7
+3,Abdominal pain,,2
+21,Diarrhea,,1
+15,Sore throat,,2
+89,Shortness of breath,,3
+57,Fatigue,,3
+14,Rash;Headache,,1
+73,Dizziness;Rash;Abdominal pain,Slurred speech,4
+54,Sore throat,,4
+59,Fatigue;Abdominal pain,,1
+33,Severe bleeding,,1
+81,Fatigue;Loss of smell/taste;Sore throat,,4
+30,Dizziness,,4
+63,Diarrhea;Headache;Vomiting;Abdominal pain,,1
+2,Abdominal pain;Sore throat;Chest pain,,3
+89,Abdominal pain;Vomiting;Cough;Diarrhea,,1
+37,Vomiting,,1
+90,Severe bleeding,,1
+68,Vomiting;Severe bleeding,,1
+70,Diarrhea;Rash,,2
+87,Headache;Dizziness,,4
+58,Headache;Fatigue;Shortness of breath,,7
+81,Cough,,3
+7,Vomiting;Fever,,10
+22,Fever,,2
+1,Chest pain;Sore throat,,3
+65,Fever;Abdominal pain;Chest pain;Diarrhea,,1
+21,Sore throat;Dizziness;Loss of smell/taste,,7
+65,Cough;Vomiting,,2
