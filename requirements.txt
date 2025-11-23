@@ -7,3 +7,7 @@ seaborn
 joblib
 requests
 streamlit-lottie
+deep-translator
+speechrecognition
+pydub
+streamlit-audiorecorder

@@ -12,6 +12,11 @@ import requests
 
 from rules import triage_rules
 
+# NEW: translation & voice
+from deep_translator import GoogleTranslator
+from audiorecorder import audiorecorder
+import speech_recognition as sr
+
 # Optional Lottie support
 try:
     from streamlit_lottie import st_lottie
@@ -131,6 +136,18 @@ def load_demo(path=DATA_PATH, n=600):
 
 df_demo = load_demo()
 
+# --- Translation helper ---
+def translate_to_english(text: str) -> str:
+    text = text.strip()
+    if not text:
+        return text
+    try:
+        translated = GoogleTranslator(source='auto', target='en').translate(text)
+        return translated
+    except Exception:
+        # If API fails, just return original text
+        return text
+
 # --- Load ML model if present ---
 model = None
 vectorizer = None
@@ -150,10 +167,15 @@ hero_col_left, hero_col_right = st.columns([3,2])
 with hero_col_left:
     st.markdown('<div class="header">', unsafe_allow_html=True)
     st.markdown('<div class="hero-title">🩺 Tiny Medical Triage Assistant</div>', unsafe_allow_html=True)
-    st.markdown('<div class="hero-sub">Hybrid rules + ML triage demo. For education only, not medical advice.</div>',
-                unsafe_allow_html=True)
-    st.markdown('<div class="small-muted">Enter symptoms on the left. The app shows rule-based and optional '
-                'ML predictions, explains the decision, and logs anonymized cases.</div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="hero-sub">Hybrid rules + ML triage demo with multilingual & voice input. For education only, not medical advice.</div>',
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        '<div class="small-muted">Enter symptoms via text, translation, or voice. The app shows rule-based and optional '
+        'ML predictions, explains the decision, and logs anonymized cases.</div>',
+        unsafe_allow_html=True
+    )
     st.markdown('</div>', unsafe_allow_html=True)
 with hero_col_right:
     if LOTTIE_ENABLED:
@@ -174,10 +196,61 @@ st.markdown("---")
 st.sidebar.markdown("## Patient quick input")
 age = st.sidebar.number_input("Age", min_value=0, max_value=120, value=28, step=1)
 duration = st.sidebar.selectbox("Duration of main symptoms (days)", options=[1,2,3,4,5,7,10,14], index=0)
-st.sidebar.markdown("### Select symptoms (one or more)")
 
+# Build symptom list from dataset
 SYMPTOMS = sorted(set(sum([s.split(";") for s in df_demo["symptoms"].dropna().tolist()], [])))
+
+st.sidebar.markdown("### Select symptoms (English)")
 selected_symptoms = st.sidebar.multiselect("Symptoms", options=SYMPTOMS, default=["Fever"])
+
+# --- NEW: Free-text input (any language) ---
+st.sidebar.markdown("### Enter symptoms in any language (optional)")
+user_text_input = st.sidebar.text_input("Describe your symptoms")
+
+if user_text_input.strip():
+    translated_input = translate_to_english(user_text_input)
+    st.sidebar.success(f"Translated to English: {translated_input}")
+    # Map translated text to known symptom keywords
+    for s in SYMPTOMS:
+        if s.lower() in translated_input.lower():
+            if s not in selected_symptoms:
+                selected_symptoms.append(s)
+
+# --- NEW: Voice input (any language) ---
+st.sidebar.markdown("### 🎤 Voice input (any language)")
+st.sidebar.caption("Click to record, then we convert speech → text → English → symptoms.")
+
+audio = audiorecorder("Click to record", "Recording...")
+
+if len(audio) > 0:
+    # Show that audio was recorded
+    st.sidebar.audio(audio.export().read(), format="audio/wav")
+
+    # Save to temp WAV
+    audio_path = "voice_input.wav"
+    audio.export(audio_path, format="wav")
+
+    r = sr.Recognizer()
+    with sr.AudioFile(audio_path) as source:
+        audio_data = r.record(source)
+
+    try:
+        # Recognize speech (auto language)
+        voice_text = r.recognize_google(audio_data)
+        st.sidebar.info(f"Voice to text: {voice_text}")
+
+        translated_voice = translate_to_english(voice_text)
+        st.sidebar.success(f"Translated: {translated_voice}")
+
+        # Map translated voice text to known symptoms
+        for s in SYMPTOMS:
+            if s.lower() in translated_voice.lower():
+                if s not in selected_symptoms:
+                    selected_symptoms.append(s)
+
+    except Exception as e:
+        st.sidebar.error(f"Could not understand audio: {e}")
+
 st.sidebar.markdown("### Any red-flag signs?")
 selected_redflags = st.sidebar.multiselect(
     "Red flags",
@@ -187,8 +260,10 @@ selected_redflags = st.sidebar.multiselect(
 
 st.sidebar.markdown("---")
 if st.sidebar.button("About"):
-    st.sidebar.info("Educational project. Combines rule-based triage with an optional ML model. "
-                    "Not a substitute for professional medical advice.")
+    st.sidebar.info(
+        "This is an educational project. It combines rule-based triage with an optional ML model, "
+        "supports multilingual + voice input, and is not a substitute for professional medical advice."
+    )
 
 # --- Layout: main content ---
 left, right = st.columns([2,1])
@@ -196,9 +271,11 @@ left, right = st.columns([2,1])
 with left:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("Patient inputs")
-    st.write(f"<span class='kv'>Age:</span> {age}   •   <span class='kv'>Duration:</span> {duration} days",
-             unsafe_allow_html=True)
-    st.write("**Symptoms:** " + (", ".join(selected_symptoms) if selected_symptoms else "—"))
+    st.write(
+        f"<span class='kv'>Age:</span> {age}   •   <span class='kv'>Duration:</span> {duration} days",
+        unsafe_allow_html=True
+    )
+    st.write("**Symptoms (detected):** " + (", ".join(selected_symptoms) if selected_symptoms else "—"))
     st.write("**Red flags:** " + (", ".join(selected_redflags) if selected_redflags else "—"))
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -227,7 +304,9 @@ with left:
     ml_pred_label = None
     if model is not None and vectorizer is not None:
         try:
-            Xcase, feat_names = build_feature_vector(selected_symptoms, selected_redflags, age, duration, vectorizer)
+            Xcase, feat_names = build_feature_vector(
+                selected_symptoms, selected_redflags, age, duration, vectorizer
+            )
             proba = model.predict_proba(Xcase)[0]
             if meta and "idx2label" in meta:
                 idx2label = {int(k): v for k, v in meta["idx2label"].items()}
@@ -297,14 +376,22 @@ with left:
         st.subheader("ML predicted probabilities")
         prob_df = pd.DataFrame(list(ml_probs.items()), columns=["Category", "Probability"])
         fig, ax = plt.subplots(figsize=(7, 1.4))
-        sns.barplot(x="Probability", y="Category",
-                    data=prob_df.sort_values("Probability", ascending=True), ax=ax)
+        sns.barplot(
+            x="Probability",
+            y="Category",
+            data=prob_df.sort_values("Probability", ascending=True),
+            ax=ax
+        )
         ax.set_xlim(0, 1)
         ax.set_xlabel("")
         ax.set_ylabel("")
         for p in ax.patches:
-            ax.text(p.get_width() + 0.01, p.get_y() + p.get_height() / 2,
-                    f"{p.get_width():.2f}", va='center')
+            ax.text(
+                p.get_width() + 0.01,
+                p.get_y() + p.get_height() / 2,
+                f"{p.get_width():.2f}",
+                va='center'
+            )
         st.pyplot(fig)
 
     # --- Save / logs (anonymized) ---
@@ -346,9 +433,11 @@ with left:
         save_note = st.text_input("Optional short note (non-identifying)", value="", max_chars=140)
     with col_save_right:
         if st.button("Save case to logs"):
-            rec = anonymize_record(age, selected_symptoms, selected_redflags,
-                                   duration, final_cat, final_reasons,
-                                   ml_probs if ml_probs else rule_probs)
+            rec = anonymize_record(
+                age, selected_symptoms, selected_redflags,
+                duration, final_cat, final_reasons,
+                ml_probs if ml_probs else rule_probs
+            )
             if save_note.strip():
                 rec["reasons"] = rec["reasons"] + " || note:" + save_note.strip()
             os.makedirs(LOG_DIR, exist_ok=True)
@@ -361,8 +450,12 @@ with left:
             logs_df = pd.read_csv(LOG_PATH)
             st.dataframe(logs_df.tail(8).reset_index(drop=True))
             csv_bytes = logs_df.to_csv(index=False).encode("utf-8")
-            st.download_button("Download logs (CSV)", data=csv_bytes,
-                               file_name="triage_logs.csv", mime="text/csv")
+            st.download_button(
+                "Download logs (CSV)",
+                data=csv_bytes,
+                file_name="triage_logs.csv",
+                mime="text/csv"
+            )
         except Exception as e:
             st.error("Error reading logs: " + str(e))
     else:
@@ -402,6 +495,8 @@ with right:
     st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("---")
-st.markdown("<div style='font-size:12px;color:#94a3b8;'>Demo & educational tool. "
-            "It is NOT for clinical use. Always contact emergency services in life-threatening situations.</div>",
-            unsafe_allow_html=True)
+st.markdown(
+    "<div style='font-size:12px;color:#94a3b8;'>Demo & educational tool. "
+    "It is NOT for clinical use. Always contact emergency services in life-threatening situations.</div>",
+    unsafe_allow_html=True
+)
